@@ -13,5 +13,7 @@ fi
 sed -i "s/^error_log\s*=.*/error_log = \/dev\/stderr/g" /etc/php-fpm.conf
 sed -i "s/^php_admin_value\[error_log\]\s*=.*/php_admin_value[error_log] = \/dev\/stderr/g" /etc/php-fpm.d/www.conf
 sed -i "s/^slowlog\s*=.*/slowlog = \/dev\/stdout/g" /etc/php-fpm.d/www.conf
+sed -i "s/^user\s*=.*/user = root/g" /etc/php-fpm.d/www.conf
+sed -i "s/^group\s*=.*/group = root/g" /etc/php-fpm.d/www.conf
 
 /usr/sbin/nginx && /usr/sbin/php-fpm -F
