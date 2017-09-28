@@ -16,4 +16,4 @@ sed -i "s/^slowlog\s*=.*/slowlog = \/dev\/stdout/g" /etc/php-fpm.d/www.conf
 sed -i "s/^user\s*=.*/user = root/g" /etc/php-fpm.d/www.conf
 sed -i "s/^group\s*=.*/group = root/g" /etc/php-fpm.d/www.conf
 
-/usr/sbin/nginx && /usr/sbin/php-fpm -F
+/usr/sbin/nginx && /usr/sbin/php-fpm -F --allow-to-run-as-root
